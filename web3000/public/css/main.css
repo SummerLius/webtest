@@ -1,0 +1,7 @@
+
+
+/* 链接颜色：lvha */
+a:link { color: blue;}
+a:visited { color:gray;}
+a:hover { color: red;}
+a:active { color: orange;}
