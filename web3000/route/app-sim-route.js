@@ -24,3 +24,5 @@ router.use((req, res) => {
 router.use((error, req, res, next) => {
     console.error(error);
 });
+
+console.log(require);
