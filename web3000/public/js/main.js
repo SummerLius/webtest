@@ -10,8 +10,7 @@ define(function(require, exports, module) {
 
     router.configure({
         notfound: function() {
-            // router.setRoute('/index');
-            location.replace('//www.baidu.com');
+            router.setRoute('/index');
         },
         // on: function() {
         //     console.log('every: on');

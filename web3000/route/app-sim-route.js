@@ -14,7 +14,14 @@ router.get('/favicon.ico', (req, res) => {
 })
 
 router.use((req, res) => {
-    res.sendFile(`${ROOT_DIR}/public/views/test.html`, {}, (err) => {
+    
+    let htmlName = 'test';
+
+    if (req.path === '/a') {
+        htmlName = 'a';
+    }
+
+    res.sendFile(`${ROOT_DIR}/public/views/${htmlName}.html`, {}, (err) => {
         if (err) {
           return console.error(err);
         }
