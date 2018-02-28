@@ -2,51 +2,148 @@
     <html>
     <head>
     <style type="text/css">
-        #header{background-color: gray;}
-		#content{
-			background-color: red;
-			margin-left: 160px;
-			margin-right: 100px;
-		}
-		
-		#sidebar{
-			background-color: blue;
-			float: right;
-			width: 100px;
-		}
-		
-        #sidebar2{
-			background-color: green;
-			float: left;
-			width: 180px;
-		}
-		#footer{
-			background-color: yellow;
-			clear: both;
-		}
+        html {
+            background: lightgrey;
+        }
+
+        .card {
+            position: static;
+            width: 250px;
+            height: 350px;
+            background: rgb(255, 255, 255);
+            float: left;
+            margin: 10px;
+
+            box-shadow: 5px 5px 5px rgb(182, 181, 181);
+
+            border-radius: 5px;
+        }
+
+        .card .card-head {
+            /* background:linear-gradient(to top, #fff, rgb(80, 175, 85)); */
+            background: rgb(80, 175, 85);
+            height: 70%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+
+            text-align: center;
+        }
+
+
+        .dialog {
+            position: fixed;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(128, 128, 128, 0.404);
+            
+
+            visibility: hidden;
+        }
+
+        .dialog .main {
+            width: 500px;
+            height: 400px;
+            background: whitesmoke;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px 1px grey, -5px -5px 10px 1px grey;
+            
+            /* margin: 0 auto; */
+            margin-left: -250px;
+            margin-top: -200px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
     </style>
     </head>
     <body>
-    <div id="page">
-        <div id="header"><h1>这里是标题</h1></div>
-        <div id="sidebar">
-            <p>侧边栏</p>
+
+
+        <div id="test-position">
+            <div id="container1" style="width: 300px;height: 300px;background:lightblue"> container1</div>
+            <div id="container2" style="background:lightpink;;"> container2
+                    <div id="box1" style="width: 100px;height: 100px;background:blue"> box1</div>
+                    <div id="box2" style="width: 100px;height: 100px;background:red;position:fixed;left: 0px;"> box2</div>
+                    <div id="box3" style="width: 100px;height: 100px;background:black"> box3</div>
+            </div>
         </div>
-        <div id="sidebar2">
-            <p>侧边栏2：地图投影，是将地球表面投影到地图平面的过程，将地理坐标转换为平面直角坐
-            标的过程。因为毕业论文需要，我重新回顾了一下地图投影的知识并且作了比较全面且简洁的总
-            结。如果你之前未系统了解过地图投影，又对地图投影感兴趣，这篇博文也许能成为一篇简洁务
-            实的阅读材料。</p>
+
+        <!-- // 卡片 -->
+    <!-- <div id="page">
+
+        <div class="card">
+            <div class="card-head"></div>
+            <div calss="card-info"></div>
         </div>
-        <div id="content">
-            <p>这里是一些文字</P>
-            <p>再来一大段文字</P>
-            <p>地图投影，是将地球表面投影到地图平面的过程，将地理坐标转换为平面直角坐标的过程。
-            因为毕业论文需要，我重新回顾了一下地图投影的知识并且作了比较全面且简洁的总结。如果你
-            之前未系统了解过地图投影，又对地图投影感兴趣，这篇博文也许能成为一篇简洁务实的阅读材
-            料。</p>
+        <div class="card">
+            <div class="card-head"></div>
+            <div calss="card-info"></div>
         </div>
-        <div id="footer"><p>没人关注的页脚</P></div>
+        <div class="card">
+                <div class="card-head"></div>
+                <div calss="card-info"></div>
+        </div>
+        <div class="card">
+                <div class="card-head"></div>
+                <div calss="card-info"></div>
+         </div>
+        <div class="card">
+                <div class="card-head"></div>
+                <div calss="card-info"></div>
+        </div>
+        <div class="card">
+                <div class="card-head"></div>
+                <div calss="card-info"></div>
+        </div>
+        <div class="card">
+                <div class="card-head"></div>
+                <div calss="card-info"></div>
+            </div>
+            <div class="card">
+                <div class="card-head"></div>
+                <div calss="card-info"></div>
+            </div>
+            <div class="card">
+                    <div class="card-head"></div>
+                    <div calss="card-info"></div>
+            </div>
+            <div class="card">
+                    <div class="card-head"></div>
+                    <div calss="card-info"></div>
+             </div>
+            <div class="card">
+                    <div class="card-head"></div>
+                    <div calss="card-info"></div>
+            </div>
+            <div class="card">
+                    <div class="card-head"></div>
+                    <div calss="card-info"></div>
+            </div>
+    </div> -->
+
+    <!-- // 弹窗 -->
+    <div class="dialog" style="color: red;">
+        <div class="main">
+            adf
+        </div>
     </div>
-    </body>
-    </html>
+
+ </body>
+
+
+    <!-- 脚本 -->
+    <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+    <script>
+        window.onload = function() {
+            var $dialog = $('.dialog');
+
+            window.ondblclick = function() {
+                $dialog.css('visibility')  === 'visible'
+                ? $dialog.css('visibility', 'hidden')
+                : $dialog.css('visibility', 'visible');   
+            }
+        }
+    </script>
+</html>
