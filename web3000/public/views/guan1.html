@@ -6,6 +6,23 @@
         <meta title="官网一号"/>
 
         <style type="text/css">
+            /* 清除浮动 */
+            /* .clearfix:after {
+                display: block;
+                font-size: 0;
+                height: 0;
+                content: ".";
+
+                visibility: hidden;
+                clear: both;
+            } */
+
+            .clearfix {
+                overflow: auto;
+            }
+
+            /* * html .clearfix {height: 1%;} 该写法好像是ie才能理解 */
+            /* /////// */
 
             html {}
 
@@ -25,14 +42,17 @@
             .main-footer {
                 height: 400px;
                 background-color: #272A2D;
-
                 color: white;
+                position: relative;
             }
 
             .main-footer .foot-info {}
 
             .main-footer .copyright {
                 text-align: center;
+                width: 100%;
+                position: absolute;
+                bottom: 40px;
             }
 
         </style>
@@ -45,26 +65,41 @@
         </div>
         
         <div class="main-content">
+            <!-- <div class="clearfix" style="background: lightskyblue;">
 
+                <div style="width: 100px;height:100px;background: blue; float: left;"></div>
+                <div style="width: 110px;height:110px;background: pink;float: left;"></div>
+            </div>
+            <div style="height:50px;background: red;position: relative;"></div> -->
         </div>
         
         <div class="main-footer">
             <div class="foot-info">
 
-                
+                    <img alt="aa"/>
                 <!-- <table>
+                    <caption>表格标题</caption>
+                    <thead>
+                        <tr>
+                            <th>hhh</th>
+                            <th>hhh</th>
+                            <th>hhh</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                            <tr>
-                                <th>aaaa</th>
-                                <th>bbbb</th>
-                                <th>cccc</th>
-                            </tr>
                             <tr>
                                 <td>xxx</td>
                                 <td>xxx</td>
                                 <td>xxx</td>
                             </tr>
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>fff</td>
+                            <td>fff</td>
+                            <td>fff</td>
+                        </tr>
+                    </tfoot>
                 </table> -->
             </div>
 
