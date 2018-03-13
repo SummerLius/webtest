@@ -35,6 +35,8 @@ router.use((req, res) => {
         htmlName = 'a';
     } else if (req.path === '/guan1') {
         htmlName = '/guan1';
+    } else if (req.path === '/liumin') {
+        htmlName = '/liumin';
     }
 
     res.sendFile(`${ROOT_DIR}/public/views/${htmlName}.html`, {}, (err) => {
